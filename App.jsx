@@ -1,11 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { useSelector } from 'react-redux'
 
 const App = () => {
+  const { appTitle } = useSelector(state => state)
   return (
     <View style={styles.container}>
-      <Text> Dream Time News </Text>
+      <Text>{appTitle}</Text>
       <StatusBar style="auto" />
     </View>
   );
