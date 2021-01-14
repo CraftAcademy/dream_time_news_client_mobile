@@ -5,16 +5,6 @@ import { useSelector } from 'react-redux'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-const App = () => {
-  const { appTitle } = useSelector(state => state)
-  return (
-    <View style={styles.container}>
-      <Text>{appTitle}</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -23,5 +13,28 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+const HomeScreen = () => {
+  return (
+    <View style={styles.container}>
+      <ApplicationHeader />
+      <Text>{appTitle}</Text>
+      <StatusBar style="light" />
+    </View>
+  )
+}
+
+const Stack = createStackNavigator()
+
+const App = () => {
+  const { appTitle } = useSelector(state => state)
+  return (
+  <NavigationContainer>
+
+  </NavigationContainer>
+  )
+}
+
+
 
 export default App
