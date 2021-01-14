@@ -15,6 +15,6 @@ beforeEach(async () => {
 })
 
 afterAll(async () => {
-  await adapter.afterAll
+  await adapter.afterAll()
   await cleanup()
 })
