@@ -1,12 +1,12 @@
 import React from "react";
 import { Dimensions, Image, StyleSheet, Text,TouchableOpacity, View } from "react-native";
 
-const ArticleIndexDetails = ({ article }) => {
+const ArticleIndexDetails = ({ navigation, article }) => {
   return (
     <>
     <TouchableOpacity
       onPress={() => {
-        navigate("ShowArticleScreen", {article: article}) 
+        navigation.navigate("ShowArticleScreen", {article: article}) 
       }}
     />
       <Image source={{ uri: article.image }} style={styles.image} />
