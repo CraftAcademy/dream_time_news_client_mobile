@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "./components/HomeScreen";
+import ShowArticleScreen from './components/ShowArticleScreen';
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,10 @@ const App = () => {
               textAlign: "center"
             },
           }}
+        />
+        <Stack.Screen
+        name="ShowArticleScreen"
+        component={ShowArticleScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
