@@ -1,6 +1,7 @@
 const initialState = {
   appTitle: "Dream Time News",
-  articles: []
+  articles: [],
+  currentArticle: {}
 }
 
 export default initialState

@@ -3,18 +3,17 @@ import { Dimensions, Image, StyleSheet, Text,TouchableOpacity, View } from "reac
 
 const ArticleIndexDetails = ({ navigation, article }) => {
   return (
-    <>
     <TouchableOpacity
       onPress={() => {
         navigation.navigate("ShowArticleScreen", {article: article}) 
       }}
-    />
+    >
       <Image source={{ uri: article.image }} style={styles.image} />
       <View style={styles.card}>
         <Text style={styles.title}>{article.title}</Text>
         <Text style={styles.subtitle}>{article.subtitle}</Text>
       </View>
-    </>
+      </TouchableOpacity>
   );
 };
 
