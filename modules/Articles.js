@@ -9,5 +9,4 @@ const Articles = {
     store.dispatch({ type: "UPDATE_ARTICLE_INDEX", payload: response.data });
   },
 };
-
 export default Articles;
