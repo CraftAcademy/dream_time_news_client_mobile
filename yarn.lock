@@ -4325,6 +4325,13 @@ funpermaproxy@^1.0.1:
   resolved "https://registry.yarnpkg.com/funpermaproxy/-/funpermaproxy-1.0.1.tgz#4650e69b7c334d9717c06beba9b339cc08ac3335"
   integrity sha512-9pEzs5vnNtR7ZGihly98w/mQ7blsvl68Wj30ZCDAXy7qDN4CWLLjdfjtH/P2m6whsnaJkw15hysCNHMXue+wdA==
 
+galio-framework@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/galio-framework/-/galio-framework-0.7.1.tgz#bb83296fc39fd401c22d307d5fd6952d63e61e67"
+  integrity sha512-5nVSiEvN+X3hZ1c/EmDs7TWu4Jan5vJ8uwPwX1y+qtGQrG7ptINVJmCgyQUhXMrYOO/ex0IGRx6YNdVfw0/IDg==
+  dependencies:
+    opencollective-postinstall "^2.0.1"
+
 genfun@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/genfun/-/genfun-5.0.0.tgz#9dd9710a06900a5c4a5bf57aca5da4e52fe76537"
@@ -7076,6 +7083,11 @@ open@^6.2.0:
   integrity sha512-IFenVPgF70fSm1keSd2iDBIDIBZkroLeuffXq+wKTzTJlBpesFWojV9lb8mzOfaAzM1sr7HQHuO0vtV0zYekGg==
   dependencies:
     is-wsl "^1.1.0"
+
+opencollective-postinstall@^2.0.1:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/opencollective-postinstall/-/opencollective-postinstall-2.0.3.tgz#7a0fff978f6dbfa4d006238fbac98ed4198c3259"
+  integrity sha512-8AV/sCtuzUeTo8gQK5qDZzARrulB3egtLzFgteqB2tcT4Mw7B8Kt7JcDHmltjz6FOAHsvTevk70gZEbhM4ZS9Q==
 
 opn@^4.0.2:
   version "4.0.2"

@@ -22,6 +22,9 @@ const App = () => {
             headerTitleStyle: {
               color: "white",
               fontSize: 30,
+              fontFamily: "AmericanTypewriter-Bold",
+              fontWeight: "bold",
+              textAlign: "center"
             },
           }}
         />

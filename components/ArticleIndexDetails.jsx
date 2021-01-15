@@ -23,11 +23,13 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 8,
     bottom: 8,
-    backgroundColor: "rgba(0,0,0,0.3)",
+    backgroundColor: "rgba(0,0,0,0.5)",
+    borderRadius: 2,
   },
   title: {
     color: "white",
-    fontSize: 30,
+    fontSize: 20,
+    fontFamily: "American Typewriter",
   },
   subtitle: {
     color: "white",
