@@ -76,7 +76,21 @@ const styles = StyleSheet.create({
     padding: 10,
     height: 40,
     borderColor: "teal",
-    borderWidth: 1,
+    borderWidth: 4,
+    borderRadius: 8,
+  },
+  pressableButton: {
+    alignSelf: "center",
+    backgroundColor: "teal",
+    padding: 10,
+    borderRadius: 20,
+    margin: 10,
+    text: {
+      fontSize: 20,
+      padding: 10,
+      textAlign: "center",
+      color: "white",
+    },
   },
 });
 

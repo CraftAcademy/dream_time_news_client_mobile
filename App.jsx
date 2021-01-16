@@ -18,17 +18,15 @@ const App = () => {
           name="Home"
           component={HomeScreen}
           options={ (props) => ({
-            headerRight: () => {
-              return (
+            headerRight: () => (
                 <Ionicons
                 name="person-outline"
+                onPress={() => props.navigation.navigate("Login")}
                 size={24}
                 color="white"
-                onPress={() => props.navigation.navigate('Login')}
                 style={{marginRight: 10}}
                 />
-             )
-            },
+                ),
             title: appTitle,
             headerStyle: {
               backgroundColor: "teal",

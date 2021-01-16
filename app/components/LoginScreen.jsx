@@ -1,44 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { Text, View, TextInput, Pressable } from "react-native";
 import { styles } from "../styles/styles";
-import Auth from '../modules/authentication'
+import Auth from "../modules/Auth";
 
-const LoginScreen = () => {
+const LoginScreen = (props) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState();
+  const authenticate = new Auth({
+    host: "https://dream-time-news-api.herokuapp.com/api",
+  });
 
-  const authentication = new Auth ({ host: "https://dream-time-news-api.herokuapp.com/api" })
-
-  const authenicatedUser = () => {
-    authentication
-    .signIn()
-    .then(() => {
-    })
-    .catch(() => {
-
-    })
-  }
+  const authenticatedUser = async () => {
+    authenticate
+      .signIn(email, password)
+      .then(resp => {
+        props.navigation.navigate("Home");
+      })
+      .catch(e => {
+        setMessage(e.response.data.errors);
+      });
+  };
   return (
     <View>
-      <TextInput placeholder="Email" style={styles.loginInput} />
-      <TextInput placeholder="Password" style={styles.loginInput} />
-      <Pressable 
-      title="Log in" 
-      onPress={() => authenicatedUser()}
-      style={{
-        alignSelf:"center",
-        backgroundColor: "teal",
-        padding: 10,
-        borderRadius: 20,
-        margin: 10
-      }}
+      <TextInput
+        placeholder="Email"
+        style={styles.loginInput}
+        onChangeText={text => setEmail(text)}
       />
-      <Text
-      style={{ 
-        fontSize: 20,
-        padding: 10,
-        textAlign: "center",
-        color: "white"
-      }}
-      >Login</Text>
+      <TextInput
+        placeholder="Password"
+        style={styles.loginInput}
+        secureTextEntry={true}
+        onChangeText={text => setPassword(text)}
+      />
+      <Pressable
+        title="Log in"
+        onPress={() => authenticatedUser()}
+        style={styles.pressableButton}
+      >
+        <Text style={styles.pressableButton.text}>Login</Text>
+      </Pressable>
+      {message && (
+        <Text style={{ color: "red" }}>
+          {message}
+        </Text>
+      )}
     </View>
   );
 };
