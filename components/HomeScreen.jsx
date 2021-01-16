@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   const { articles } = useSelector(state => state);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const HomeScreen = () => {
       <FlatList
         data={articles}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <ArticleIndexDetails article={item} />}
+        renderItem={({ item }) => <ArticleIndexDetails navigation={navigation} article={item} />}
       />
     </View>
   );

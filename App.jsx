@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "./components/HomeScreen";
+import ShowArticleScreen from "./components/ShowArticleScreen";
 
 const Stack = createStackNavigator();
 
@@ -24,7 +25,24 @@ const App = () => {
               fontSize: 30,
               fontFamily: "AmericanTypewriter-Bold",
               fontWeight: "bold",
-              textAlign: "center"
+              textAlign: "center",
+            },
+          }}
+        />
+        <Stack.Screen
+          name="ShowArticleScreen"
+          component={ShowArticleScreen}
+          options={{
+            title: appTitle,
+            headerStyle: {
+            backgroundColor: "teal",
+            },
+            headerTitleStyle: {
+              color: "white",
+              fontSize: 30,
+              fontFamily: "AmericanTypewriter-Bold",
+              fontWeight: "bold",
+              textAlign: "center",
             },
           }}
         />
