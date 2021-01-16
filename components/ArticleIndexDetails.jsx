@@ -23,16 +23,16 @@ const styles = StyleSheet.create({
   card: {
     position: "absolute",
     width: Dimensions.get("window").width,
-    padding: 7,
+    padding: 10,
     paddingLeft: 10,
-    paddingRight: 8,
-    bottom: 8,
+    paddingRight: 10,
+    bottom: 3,
     backgroundColor: "rgba(0,0,0,0.5)",
     borderRadius: 2,
   },
   title: {
     color: "white",
-    fontSize: 20,
+    fontSize: 23,
     fontFamily: "American Typewriter",
   },
   subtitle: {
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   image: {
-    height: 250,
+    height: 270,
     width: Dimensions.get("window").width,
   },
 });

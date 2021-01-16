@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Dimensions, StyleSheet, Text, View, Image } from "react-native";
+import { Dimensions, Image, StyleSheet, Text, ScrollView } from "react-native";
 import { useSelector } from "react-redux";
 import Articles from "../modules/Articles";
 
@@ -12,11 +12,14 @@ const ShowArticleScreen = props => {
   }, []);
 
   return (
-    <View style={{ flex: 1 }}>
+    <ScrollView style={{ flex: 1 }}>
       <Image source={{ uri: currentArticle.image }} style={styles.image} />
       <Text style={styles.title}>{currentArticle.title}</Text>
-      <Text style={[styles.content]}>{currentArticle.content}</Text>
-    </View>
+      <Text style={styles.sub_title}>{currentArticle.sub_title}</Text>
+      <Text style={styles.content}>{currentArticle.content}</Text>
+      <Text style={styles.author}>{currentArticle.author}</Text>
+      <Text style={styles.created_at}>{currentArticle.created_at}</Text>
+    </ScrollView>
   );
 };
 
@@ -31,20 +34,44 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0,0,0,0.3)",
   },
   title: {
-    padding: 20,
-    color: "teal",
-    fontSize: 30,
+    padding: 25,
+    color: "#38302f",
+    fontSize: 40,
   },
-  subtitle: {
-    color: "white",
-    fontSize: 16,
+  sub_title: {
+    color: "#4a4443",
+    fontSize: 23,
+    bottom: 8,
+    paddingLeft: 25,
+    paddingRight: 20,
   },
-  body: {
-    padding: 20,
+  content: {
+    color: "#343940",
+    padding: 7,
+    paddingLeft: 25,
+    paddingRight: 20,
+    paddingBottom: 20,
+    bottom: 8,
     fontSize: 18,
   },
+  author: {
+    color: "#9c0ee8",
+    fontSize: 15,
+    bottom: 15,
+    paddingLeft: 25,
+    paddingRight: 20,
+    paddingBottom: 20,
+  },
+  created_at: {
+    color: "#9c0ee8",
+    fontSize: 15,
+    bottom: 15,
+    paddingLeft: 25,
+    paddingRight: 20,
+    paddingBottom: 40,
+  },
   image: {
-    height: 250,
+    height: 350,
     width: Dimensions.get("window").width,
   },
 });

@@ -3,12 +3,12 @@ import { useSelector } from "react-redux";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "./components/HomeScreen";
-import ShowArticleScreen from './components/ShowArticleScreen';
+import ShowArticleScreen from "./components/ShowArticleScreen";
 
 const Stack = createStackNavigator();
 
 const App = () => {
-  const { appTitle, currentArticle } = useSelector(state => state);
+  const { appTitle } = useSelector(state => state);
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -25,24 +25,26 @@ const App = () => {
               fontSize: 30,
               fontFamily: "AmericanTypewriter-Bold",
               fontWeight: "bold",
-              textAlign: "center"
+              textAlign: "center",
             },
           }}
         />
         <Stack.Screen
-        name="ShowArticleScreen"
-        component={ShowArticleScreen}
-        options={{
-          title: currentArticle.title,
-          headerStyle: {
-            backgroundColor: 'teal',
-          },
-          headerTitleStyle: {
-            color: 'white',
-            fontSize: 20,
-            fontFamily: 'AmericanTypewriter-Bold'
-          }
-        }}
+          name="ShowArticleScreen"
+          component={ShowArticleScreen}
+          options={{
+            title: appTitle,
+            headerStyle: {
+            backgroundColor: "teal",
+            },
+            headerTitleStyle: {
+              color: "white",
+              fontSize: 30,
+              fontFamily: "AmericanTypewriter-Bold",
+              fontWeight: "bold",
+              textAlign: "center",
+            },
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
