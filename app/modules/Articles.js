@@ -1,5 +1,4 @@
 import axios from "axios";
-import ShowArticleScreen from '../components/ShowArticleScreen';
 import store from "../state/store/store";
 
 const API_URL = "https://dream-time-news-api.herokuapp.com/api";

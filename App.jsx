@@ -2,8 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import HomeScreen from "./components/HomeScreen";
-import ShowArticleScreen from "./components/ShowArticleScreen";
+import HomeScreen from "./app/components/HomeScreen";
+import ShowArticleScreen from "./app/components/ShowArticleScreen";
 
 const Stack = createStackNavigator();
 
@@ -35,7 +35,7 @@ const App = () => {
           options={{
             title: appTitle,
             headerStyle: {
-            backgroundColor: "teal",
+              backgroundColor: "teal",
             },
             headerTitleStyle: {
               color: "white",

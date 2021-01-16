@@ -3,16 +3,8 @@ import { StatusBar } from "expo-status-bar";
 import { useSelector } from "react-redux";
 import { StyleSheet, View, FlatList } from "react-native";
 import Articles from "../modules/Articles";
+import { styles } from '../styles/styles'
 import ArticleIndexDetails from "./ArticleIndexDetails";
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
 
 const HomeScreen = ({navigation}) => {
   const { articles } = useSelector(state => state);
@@ -22,7 +14,7 @@ const HomeScreen = ({navigation}) => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <View style={styles.homeContainer}>
       <StatusBar style="light" />
       <FlatList
         data={articles}
