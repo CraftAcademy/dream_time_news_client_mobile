@@ -1,8 +1,21 @@
 import React from "react";
 import { Text, View, TextInput, Pressable } from "react-native";
 import { styles } from "../styles/styles";
+import Auth from '../modules/authentication'
 
 const LoginScreen = () => {
+
+  const authentication = new Auth ({ host: "https://dream-time-news-api.herokuapp.com/api" })
+
+  const authenicatedUser = () => {
+    authentication
+    .signIn()
+    .then(() => {
+    })
+    .catch(() => {
+
+    })
+  }
   return (
     <View>
       <TextInput placeholder="Email" style={styles.loginInput} />
