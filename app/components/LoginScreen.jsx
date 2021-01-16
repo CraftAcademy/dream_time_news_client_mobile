@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Text, View, TextInput, Pressable } from "react-native";
+import { Text, View, TextInput, Pressable, Image } from "react-native";
 import { styles } from "../styles/styles";
 import Auth from "../modules/Auth";
+import { showMessage } from "react-native-flash-message";
 
-const LoginScreen = (props) => {
+const LoginScreen = props => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState();
@@ -12,7 +13,7 @@ const LoginScreen = (props) => {
   });
 
   const authenticatedUser = async () => {
-    authenticate
+    await authenticate
       .signIn(email, password)
       .then(resp => {
         props.navigation.navigate("Home");
@@ -22,30 +23,51 @@ const LoginScreen = (props) => {
       });
   };
   return (
-    <View>
-      <TextInput
-        placeholder="Email"
-        style={styles.loginInput}
-        onChangeText={text => setEmail(text)}
+    <View style={styles.loginView.container}>
+      <Image
+        style={styles.loginView.image}
+        source={require("../../assets/dreamtimesnews.png")}
       />
-      <TextInput
-        placeholder="Password"
-        style={styles.loginInput}
-        secureTextEntry={true}
-        onChangeText={text => setPassword(text)}
-      />
-      <Pressable
-        title="Log in"
-        onPress={() => authenticatedUser()}
-        style={styles.pressableButton}
-      >
-        <Text style={styles.pressableButton.text}>Login</Text>
-      </Pressable>
-      {message && (
-        <Text style={{ color: "red" }}>
-          {message}
-        </Text>
-      )}
+      <View style={styles.loginView.input}>
+        <TextInput
+          placeholder="Email"
+          style={styles.loginInput}
+          onChangeText={text => setEmail(text)}
+        />
+        <TextInput
+          placeholder="Password"
+          style={styles.loginInput}
+          secureTextEntry={true}
+          onChangeText={text => setPassword(text)}
+        />
+        <Pressable
+          title="Log in"
+          onPress={() => {
+            authenticatedUser();
+            {
+              !message &&
+                showMessage({
+                  message: "Hello!",
+                  type: "success",
+                  autoHide: true,
+                  icon: "auto",
+                  duration: 2000,
+                });
+            }
+          }}
+          style={styles.pressableButton}
+        >
+          <Text style={styles.pressableButton.text}>Login</Text>
+        </Pressable>
+        {message &&
+          showMessage({
+            message: message,
+            type: "warning",
+            autoHide: true,
+            duration: 6000,
+            hideOnPress: true,
+          })}
+      </View>
     </View>
   );
 };

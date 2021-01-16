@@ -6,6 +6,7 @@ import HomeScreen from "./app/components/HomeScreen";
 import ShowArticleScreen from "./app/components/ShowArticleScreen";
 import LoginScreen from './app/components/LoginScreen';
 import { Ionicons } from '@expo/vector-icons'
+import FlashMessage from "react-native-flash-message"
 
 const Stack = createStackNavigator();
 
@@ -59,6 +60,7 @@ const App = () => {
         />
         <Stack.Screen name="Login" component={LoginScreen}/>
       </Stack.Navigator>
+      <FlashMessage position="center"  />
     </NavigationContainer>
   );
 };
