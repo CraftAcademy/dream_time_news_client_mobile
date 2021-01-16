@@ -71,6 +71,13 @@ const styles = StyleSheet.create({
     height: 350,
     width: Dimensions.get("window").width,
   },
+  loginInput: {
+    marginBottom: 20,
+    padding: 10,
+    height: 40,
+    borderColor: "teal",
+    borderWidth: 1,
+  },
 });
 
 export { styles };

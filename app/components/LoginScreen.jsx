@@ -1,14 +1,33 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React from "react";
+import { Text, View, TextInput, Pressable } from "react-native";
+import { styles } from "../styles/styles";
 
 const LoginScreen = () => {
   return (
     <View>
-      <Text></Text>
+      <TextInput placeholder="Email" style={styles.loginInput} />
+      <TextInput placeholder="Password" style={styles.loginInput} />
+      <Pressable 
+      title="Log in" 
+      onPress={() => authenicatedUser()}
+      style={{
+        alignSelf:"center",
+        backgroundColor: "teal",
+        padding: 10,
+        borderRadius: 20,
+        margin: 10
+      }}
+      />
+      <Text
+      style={{ 
+        fontSize: 20,
+        padding: 10,
+        textAlign: "center",
+        color: "white"
+      }}
+      >Login</Text>
     </View>
-  )
-}
+  );
+};
 
-export default LoginScreen
-
-const styles = StyleSheet.create({})
+export default LoginScreen;

@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "./app/components/HomeScreen";
 import ShowArticleScreen from "./app/components/ShowArticleScreen";
 import LoginScreen from './app/components/LoginScreen';
+import { Ionicons } from '@expo/vector-icons'
 
 const Stack = createStackNavigator();
 
@@ -16,7 +17,18 @@ const App = () => {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{
+          options={ (props) => ({
+            headerRight: () => {
+              return (
+                <Ionicons
+                name="person-outline"
+                size={24}
+                color="white"
+                onPress={() => props.navigation.navigate('Login')}
+                style={{marginRight: 10}}
+                />
+             )
+            },
             title: appTitle,
             headerStyle: {
               backgroundColor: "teal",
@@ -28,7 +40,7 @@ const App = () => {
               fontWeight: "bold",
               textAlign: "center",
             },
-          }}
+          })}
         />
         <Stack.Screen
           name="ShowArticleScreen"
