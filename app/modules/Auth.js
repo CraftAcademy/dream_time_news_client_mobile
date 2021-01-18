@@ -1,6 +1,8 @@
 import axios from "axios";
 import AsyncStorage from "@react-native-community/async-storage";
-const apiUrl = process.env.NODE_ENV === "development" && "https://dream-time-news-api.herokuapp.com/api0";
+const apiUrl =
+  process.env.NODE_ENV === "development" &&
+  "https://dream-time-news-api.herokuapp.com/api0";
 
 const defaultOptions = {
   host: apiUrl,
@@ -37,7 +39,7 @@ class Auth {
         : "/validate_token"
     }`;
     axios.interceptors.response.use(
-      (response) => {
+      response => {
         if (Array.isArray(response.data)) {
           return {
             ...response,
@@ -46,7 +48,7 @@ class Auth {
         }
         return response;
       },
-      (error) => {
+      error => {
         return Promise.reject(error);
       }
     );
@@ -54,11 +56,11 @@ class Auth {
   test() {
     axios
       .get(this.signInUrl)
-      .then((response) => {
+      .then(response => {
         console.log(`Connection success: `);
         console.table(response.data);
       })
-      .catch((error) => {
+      .catch(error => {
         if (error.response) {
           console.log("Connection success");
         } else {

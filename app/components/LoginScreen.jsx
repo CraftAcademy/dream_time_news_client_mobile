@@ -28,46 +28,44 @@ const LoginScreen = props => {
         style={styles.loginView.image}
         source={require("../../assets/dreamtimesnews.png")}
       />
-      {/* <View style={styles.loginView.input}> */}
-        <TextInput
-          placeholder="Email"
-          style={styles.loginInput}
-          onChangeText={text => setEmail(text)}
-        />
-        <TextInput
-          placeholder="Password"
-          style={styles.loginInput}
-          secureTextEntry={true}
-          onChangeText={text => setPassword(text)}
-        />
-        <Pressable
-          title="Log in"
-          onPress={() => {
-            authenticatedUser();
-            {
-              !message &&
-                showMessage({
-                  message: "Hello!",
-                  type: "success",
-                  autoHide: true,
-                  icon: "auto",
-                  duration: 2000,
-                });
-            }
-          }}
-          style={styles.pressableButton}
-        >
-          <Text style={styles.pressableButton.text}>Login</Text>
-        </Pressable>
-        {message &&
-          showMessage({
-            message: message,
-            type: "warning",
-            autoHide: true,
-            duration: 6000,
-            hideOnPress: true,
-          })}
-      {/* </View> */}
+      <TextInput
+        placeholder="Email"
+        style={styles.loginInput}
+        onChangeText={text => setEmail(text)}
+      />
+      <TextInput
+        placeholder="Password"
+        style={styles.loginInput}
+        secureTextEntry={true}
+        onChangeText={text => setPassword(text)}
+      />
+      <Pressable
+        title="Log in"
+        onPress={() => {
+          authenticatedUser();
+          {
+            !message &&
+              showMessage({
+                message: "Hello!",
+                type: "success",
+                autoHide: true,
+                icon: "auto",
+                duration: 2000,
+              });
+          }
+        }}
+        style={styles.pressableButton}
+      >
+        <Text style={styles.pressableButton.text}>Login</Text>
+      </Pressable>
+      {message &&
+        showMessage({
+          message: message,
+          type: "warning",
+          autoHide: true,
+          duration: 6000,
+          hideOnPress: true,
+        })}
     </View>
   );
 };
