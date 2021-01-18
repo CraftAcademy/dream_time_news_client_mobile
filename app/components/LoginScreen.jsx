@@ -28,7 +28,7 @@ const LoginScreen = props => {
         style={styles.loginView.image}
         source={require("../../assets/dreamtimesnews.png")}
       />
-      <View style={styles.loginView.input}>
+      {/* <View style={styles.loginView.input}> */}
         <TextInput
           placeholder="Email"
           style={styles.loginInput}
@@ -67,7 +67,7 @@ const LoginScreen = props => {
             duration: 6000,
             hideOnPress: true,
           })}
-      </View>
+      {/* </View> */}
     </View>
   );
 };

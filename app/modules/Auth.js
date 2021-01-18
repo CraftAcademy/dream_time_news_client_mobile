@@ -1,8 +1,6 @@
 import axios from "axios";
 import AsyncStorage from "@react-native-community/async-storage";
-const apiUrl =
-  process.env.NODE_ENV === "development" && "http://localhost:3000";
-// const apiUrl = "https://dream-time-news-api.herokuapp.com/api"
+const apiUrl = process.env.NODE_ENV === "development" && "https://dream-time-news-api.herokuapp.com/api0";
 
 const defaultOptions = {
   host: apiUrl,
